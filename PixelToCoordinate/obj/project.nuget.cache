@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "csFjWKeGUtvhp+BYv4VeXjRb4aXsKtoPmahJqBDckuhMKrUC0Fz14s2QQ39ct9YiipBo+SzTZXJBYZs+xGjBOQ==",
+  "dgSpecHash": "LwZKej6NNxZEuTXwtpCSjgjKt+K2Dj2aw0FsCm/n/LPaVFZ+GENpnsGHkGxemagwvMvOg8X4oqOY5UmgmWJPSw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\BrawnyClover\\source\\repos\\PixelToCoordinate\\PixelToCoordinate\\PixelToCoordinate.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\gitProject\\PixelToCoordinate\\PixelToCoordinate\\PixelToCoordinate.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\손명준\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.27\\microsoft.netcore.app.host.win-x64.3.1.27.nupkg.sha512",
+    "C:\\Users\\손명준\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\손명준\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\손명준\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

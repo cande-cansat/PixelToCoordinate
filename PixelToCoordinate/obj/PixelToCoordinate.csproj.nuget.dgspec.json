@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\BrawnyClover\\source\\repos\\PixelToCoordinate\\PixelToCoordinate\\PixelToCoordinate.csproj": {}
+    "C:\\gitProject\\PixelToCoordinate\\PixelToCoordinate\\PixelToCoordinate.csproj": {}
   },
   "projects": {
-    "C:\\Users\\BrawnyClover\\source\\repos\\PixelToCoordinate\\PixelToCoordinate\\PixelToCoordinate.csproj": {
+    "C:\\gitProject\\PixelToCoordinate\\PixelToCoordinate\\PixelToCoordinate.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\BrawnyClover\\source\\repos\\PixelToCoordinate\\PixelToCoordinate\\PixelToCoordinate.csproj",
+        "projectUniqueName": "C:\\gitProject\\PixelToCoordinate\\PixelToCoordinate\\PixelToCoordinate.csproj",
         "projectName": "PixelToCoordinate",
-        "projectPath": "C:\\Users\\BrawnyClover\\source\\repos\\PixelToCoordinate\\PixelToCoordinate\\PixelToCoordinate.csproj",
-        "packagesPath": "C:\\Users\\BrawnyClover\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\BrawnyClover\\source\\repos\\PixelToCoordinate\\PixelToCoordinate\\obj\\",
+        "projectPath": "C:\\gitProject\\PixelToCoordinate\\PixelToCoordinate\\PixelToCoordinate.csproj",
+        "packagesPath": "C:\\Users\\손명준\\.nuget\\packages\\",
+        "outputPath": "C:\\gitProject\\PixelToCoordinate\\PixelToCoordinate\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\BrawnyClover\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\손명준\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -53,12 +49,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.27, 3.1.27]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
