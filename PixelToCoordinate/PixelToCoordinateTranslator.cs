@@ -2,21 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SatGS.PathFinder
+namespace PixelToCoordinate
 {
     public class PixelToCoordinateTranslator
-    {
+    { 
         private readonly int[] rowDegreeList = { -65, -60, -55, -50, -45, -40, -35, -30, -25, -20, -15, -10, -5, 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65 };
         private readonly int[] colDegreeList = { 50, 45, 40, 35, 30, 25, 20, 15, 10, 5, 0, -5, -10, -15, -20, -25, -30, -35, -40, -45, -50 };
 
         private readonly int[] rowDiffRadial = { 25, 26, 31, 20, 25, 21, 24, 21, 25, 19, 30, 26, 27, 27, 26, 30, 19, 25, 21, 24, 21, 25, 20, 31, 26, 25 };
-
-        private List<double> rowTargetDiffRadial = new List<double>();
-        private List<double> rowAccRadial = new List<double>();
-
         private readonly int[] colDiffRadial = { 22, 25, 21, 24, 21, 25, 18, 30, 27, 27, 27, 27, 30, 18, 25, 21, 24, 21, 25, 22 };
-        private List<double> colTargetDiffRadial = new List<double>();
-        private List<double> colAccRadial = new List<double>();
+
+        private readonly int[] accRowPixelData = { 0, 25, 51, 82, 102, 127, 148, 172, 193, 218, 237, 267, 293, 320, 347, 373, 403, 422, 447, 468, 492, 513, 538, 558, 589, 615, 640 };
+        private readonly int[] accColPixelData = { 0, 22, 47, 68, 92, 113, 138, 156, 186, 213, 240, 267, 294, 324, 342, 367, 388, 412, 433, 458, 480 };
 
         private double d;
         private double tx;
@@ -31,52 +28,32 @@ namespace SatGS.PathFinder
             this.ty = ty;
         }
 
-        private void calcDistanceBetweenRadial()
-        {
-            double acc = 0;
-
-            foreach (int diff in rowDiffRadial)
-            {
-                acc += diff * d;
-                rowAccRadial.Add(acc);
-                rowTargetDiffRadial.Add(diff * d);
-            }
-
-            acc = 0;
-            foreach (int diff in colDiffRadial)
-            {
-                acc += diff * d;
-                colAccRadial.Add(acc);
-                colTargetDiffRadial.Add(diff * d);
-            }
-
-        }
 
         private void calcDegreeByRadial()
         {
             Console.WriteLine($"d: {d}");
-            for (int i = 0; i < rowAccRadial.Count; i++)
+            for (int i = 0; i < accRowPixelData.Length; i++)
             {
-                if (rowAccRadial[i+1] > tx) {
-                    int offset = tx < 320 ? -5 : 5;
+                if (accRowPixelData[i + 1] > tx)
+                {
+                    int offset = 5;
                     double lessDeg = (double)rowDegreeList[i];
-                    phi = (((double)(tx - rowAccRadial[i]) / (double)rowTargetDiffRadial[i]) * (double)(offset)) + (double)lessDeg;
-                    Console.WriteLine($"{(double)(tx - rowAccRadial[i])}");
-                    Console.WriteLine($"{((double)(tx - rowAccRadial[i]) / (double)rowTargetDiffRadial[i])}");
-                    Console.WriteLine($"{(((double)(tx - rowAccRadial[i]) / (double)rowTargetDiffRadial[i]) * (double)(offset))}");
-                    Console.WriteLine($"tx: {tx}, i:{i}, rowAccRadial[i] = {rowAccRadial[i]}, phi = {tx - rowAccRadial[i]}/{rowTargetDiffRadial[i] * offset} + {lessDeg} = {phi}");
+                    phi = (((double)(tx - accRowPixelData[i]) / (double)rowDiffRadial[i]) * (double)(offset)) + (double)lessDeg;
+                    
+                    Console.WriteLine($"tx : {tx}, i : {i}, phi : {(tx - accRowPixelData[i])}/{rowDiffRadial[i] * offset} + {lessDeg} = {phi}");
                     break;
                 }
             }
 
-            for (int i = 0; i < colAccRadial.Count; i++)
+            for (int i = 0; i < accColPixelData.Length; i++)
             {
-                if (colAccRadial[i+1] > ty)
+                if (accColPixelData[i + 1] > ty)
                 {
-                    int offset = tx < 240 ? 5 : -5;
-                    int lessDeg = colDegreeList[i];
-                    theta = (double)90 - ((double)(ty - colAccRadial[i]) / (double)colTargetDiffRadial[i] * (double)offset + (double)lessDeg);
-                    Console.WriteLine($"ty = {ty}, colAccRadial[i] = {colAccRadial[i]}, theta = 90 - {ty - colAccRadial[i]}/{colTargetDiffRadial[i] * offset} + {lessDeg} = {theta}");
+                    int offset = -5;
+                    double lessDeg = (double)colDegreeList[i];
+                    theta = 90 - ((((double)(ty - accColPixelData[i]) / (double)colDiffRadial[i]) * (double)(offset)) + (double)lessDeg);
+
+                    Console.WriteLine($"ty : {ty}, i : {i}, theta : 90 - {(ty - accColPixelData[i])}/{colDiffRadial[i] * offset} + {lessDeg} = {theta}");
                     break;
                 }
             }
@@ -84,7 +61,6 @@ namespace SatGS.PathFinder
 
         public List<double> calcDegreeFromPixel()
         {
-            calcDistanceBetweenRadial();
             calcDegreeByRadial();
             List<double> retVal = new List<double>();
             retVal.Add((double)d);
