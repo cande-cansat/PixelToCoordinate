@@ -9,6 +9,8 @@ namespace PixelToCoordinate
         private Coordinate Origin;
         private Coordinate recentCoordinate;
 
+        private const double UNIT_DISTANCE = 0.00000898335;
+
         public GpsToCoordinate() { }
         public GpsToCoordinate(Coordinate Origin, Coordinate recentCoordinate)
         {
@@ -34,6 +36,14 @@ namespace PixelToCoordinate
             float x = measure(Origin.item1, Origin.item2, recentCoordinate.item1, Origin.item2);
             float y = measure(recentCoordinate.item1, Origin.item2, recentCoordinate.item1, recentCoordinate.item2);
             return new Coordinate(x, y, recentCoordinate.item3);
+        }
+
+        public Coordinate convertCoordinateToGPS()
+        {
+            double x = recentCoordinate.item1 * UNIT_DISTANCE + Origin.item1;
+            double y = recentCoordinate.item2 * UNIT_DISTANCE + Origin.item2;
+            double z = recentCoordinate.item3;
+            return new Coordinate(x, y, z);
         }
 
     }

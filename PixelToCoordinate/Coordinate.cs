@@ -10,12 +10,22 @@ namespace PixelToCoordinate
         public float item2;
         public float item3;
 
+        public double ditem1;
+        public double ditem2;
+        public double ditem3;
+
         public Coordinate() { }
         public Coordinate(float item1, float item2, float item3)
         {
             this.item1 = item1;
             this.item2 = item2;
             this.item3 = item3;
+        }
+        public Coordinate(double ditem1, double ditem2, double ditem3)
+        {
+            this.ditem1 = ditem1;
+            this.ditem2 = ditem2;
+            this.ditem3 = ditem3;
         }
 
         public static Coordinate vectorSum(Coordinate T1, Coordinate T2)

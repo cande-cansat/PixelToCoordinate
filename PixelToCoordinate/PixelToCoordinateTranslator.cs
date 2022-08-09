@@ -59,13 +59,10 @@ namespace PixelToCoordinate
             }
         }
 
-        public List<double> calcDegreeFromPixel()
+        public Coordinate pixetToSpherical()
         {
             calcDegreeByRadial();
-            List<double> retVal = new List<double>();
-            retVal.Add((double)d);
-            retVal.Add(phi);
-            retVal.Add(theta);
+            Coordinate retVal = new Coordinate(d, phi, theta);
             return retVal;
         }
     }

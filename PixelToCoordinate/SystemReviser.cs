@@ -56,5 +56,14 @@ namespace PixelToCoordinate
             return retVal;
         }
 
+        public Coordinate revise(Coordinate cartesian, float yaw)
+        {
+            return new Coordinate(
+                cos(-yaw) * cartesian.item1 - sin(-yaw) * cartesian.item2,
+                sin(-yaw) * cartesian.item1 + cos(-yaw) * cartesian.item2,
+                cartesian.item3
+            );
+        }
+
     }
 }
