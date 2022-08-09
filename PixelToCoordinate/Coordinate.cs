@@ -14,6 +14,8 @@ namespace PixelToCoordinate
         public double ditem2;
         public double ditem3;
 
+        public bool isDouble = false;
+
         public Coordinate() { }
         public Coordinate(float item1, float item2, float item3)
         {
@@ -26,10 +28,19 @@ namespace PixelToCoordinate
             this.ditem1 = ditem1;
             this.ditem2 = ditem2;
             this.ditem3 = ditem3;
+            isDouble = true;
         }
 
         public static Coordinate vectorSum(Coordinate T1, Coordinate T2)
         {
+            if(T1.isDouble && T2.isDouble)
+            {
+                return new Coordinate(
+                    T1.ditem1 + T2.ditem1,
+                    T1.ditem2 + T2.ditem2,
+                    T1.ditem3 + T2.ditem3
+                );
+            }
             return new Coordinate(
                 T1.item1 + T2.item1,
                 T1.item2 + T2.item2,
@@ -48,9 +59,9 @@ namespace PixelToCoordinate
             float phi = sphericalCoord.item2;
             float theta = sphericalCoord.item3;
             return new Coordinate(
-                    (float)(rho * Math.Sin(phi) * Math.Cos(theta)),
-                    (float)(rho * Math.Sin(phi) * Math.Sin(theta)),
-                    (float)(rho * Math.Cos(phi))
+                    (float)(rho * Math.Sin(theta) * Math.Cos(phi)),
+                    (float)(rho * Math.Sin(theta) * Math.Sin(phi)),
+                    (float)(rho * Math.Cos(theta))
                );
         }
 

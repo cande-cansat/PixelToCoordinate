@@ -42,7 +42,7 @@ namespace PixelToCoordinate
         {
             double x = recentCoordinate.item1 * UNIT_DISTANCE + Origin.item1;
             double y = recentCoordinate.item2 * UNIT_DISTANCE + Origin.item2;
-            double z = recentCoordinate.item3;
+            double z = recentCoordinate.item3 + Origin.item3;
             return new Coordinate(x, y, z);
         }
 

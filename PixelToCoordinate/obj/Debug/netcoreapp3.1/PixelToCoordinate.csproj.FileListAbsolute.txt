@@ -1,0 +1,14 @@
+C:\gitProject\PixelToCoordinate\PixelToCoordinate\bin\Debug\netcoreapp3.1\PixelToCoordinate.exe
+C:\gitProject\PixelToCoordinate\PixelToCoordinate\bin\Debug\netcoreapp3.1\PixelToCoordinate.deps.json
+C:\gitProject\PixelToCoordinate\PixelToCoordinate\bin\Debug\netcoreapp3.1\PixelToCoordinate.runtimeconfig.json
+C:\gitProject\PixelToCoordinate\PixelToCoordinate\bin\Debug\netcoreapp3.1\PixelToCoordinate.runtimeconfig.dev.json
+C:\gitProject\PixelToCoordinate\PixelToCoordinate\bin\Debug\netcoreapp3.1\PixelToCoordinate.dll
+C:\gitProject\PixelToCoordinate\PixelToCoordinate\bin\Debug\netcoreapp3.1\PixelToCoordinate.pdb
+C:\gitProject\PixelToCoordinate\PixelToCoordinate\obj\Debug\netcoreapp3.1\PixelToCoordinate.csproj.AssemblyReference.cache
+C:\gitProject\PixelToCoordinate\PixelToCoordinate\obj\Debug\netcoreapp3.1\PixelToCoordinate.GeneratedMSBuildEditorConfig.editorconfig
+C:\gitProject\PixelToCoordinate\PixelToCoordinate\obj\Debug\netcoreapp3.1\PixelToCoordinate.AssemblyInfoInputs.cache
+C:\gitProject\PixelToCoordinate\PixelToCoordinate\obj\Debug\netcoreapp3.1\PixelToCoordinate.AssemblyInfo.cs
+C:\gitProject\PixelToCoordinate\PixelToCoordinate\obj\Debug\netcoreapp3.1\PixelToCoordinate.csproj.CoreCompileInputs.cache
+C:\gitProject\PixelToCoordinate\PixelToCoordinate\obj\Debug\netcoreapp3.1\PixelToCoordinate.dll
+C:\gitProject\PixelToCoordinate\PixelToCoordinate\obj\Debug\netcoreapp3.1\PixelToCoordinate.pdb
+C:\gitProject\PixelToCoordinate\PixelToCoordinate\obj\Debug\netcoreapp3.1\PixelToCoordinate.genruntimeconfig.cache
