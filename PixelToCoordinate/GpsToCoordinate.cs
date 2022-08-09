@@ -18,7 +18,7 @@ namespace PixelToCoordinate
             this.recentCoordinate = recentCoordinate;
         }
 
-        private float measure(float lat1, float lon1, float lat2, float lon2)
+        private float measure(double lat1, double lon1, double lat2, double lon2)
         {  // generally used geo measurement function
             var R = 6378.137; // Radius of earth in KM
             var dLat = lat2 * Math.PI / 180 - lat1 * Math.PI / 180;
@@ -33,16 +33,23 @@ namespace PixelToCoordinate
 
         public Coordinate convertGpsToCoordinate()
         {
-            float x = measure(Origin.item1, Origin.item2, recentCoordinate.item1, Origin.item2);
-            float y = measure(recentCoordinate.item1, Origin.item2, recentCoordinate.item1, recentCoordinate.item2);
+            float x = measure(Origin.ditem1, Origin.ditem2, recentCoordinate.ditem1, Origin.ditem2);
+            float y = measure(recentCoordinate.ditem1, Origin.ditem2, recentCoordinate.ditem1, recentCoordinate.ditem2);
             return new Coordinate(x, y, recentCoordinate.item3);
+        }
+
+        public Coordinate convertGpsToCoordinate(Coordinate Origin, Coordinate recentCoordinate)
+        {
+            float x = measure(Origin.ditem1, Origin.ditem2, recentCoordinate.ditem1, Origin.ditem2);
+            float y = measure(recentCoordinate.ditem1, Origin.ditem2, recentCoordinate.ditem1, recentCoordinate.ditem2);
+            return new Coordinate(x, y, recentCoordinate.ditem3);
         }
 
         public Coordinate convertCoordinateToGPS()
         {
-            double x = recentCoordinate.item1 * UNIT_DISTANCE + Origin.item1;
-            double y = recentCoordinate.item2 * UNIT_DISTANCE + Origin.item2;
-            double z = recentCoordinate.item3 + Origin.item3;
+            double x = recentCoordinate.ditem1 * UNIT_DISTANCE + Origin.ditem1;
+            double y = recentCoordinate.ditem2 * UNIT_DISTANCE + Origin.ditem2;
+            double z = recentCoordinate.ditem3 + Origin.ditem3;
             return new Coordinate(x, y, z);
         }
 

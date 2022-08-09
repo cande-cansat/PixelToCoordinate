@@ -65,6 +65,19 @@ namespace PixelToCoordinate
                );
         }
 
+        public void toDouble()
+        {
+            this.ditem1 = (double)item1;
+            this.ditem2 = (double)item2;
+            this.ditem3 = (double)item3;
+        }
+        public void toFloat()
+        {
+            this.item1 = (float)ditem1;
+            this.item2 = (float)ditem2;
+            this.item3 = (float)ditem3;
+        }
+
     }
 
     public class PositionData
